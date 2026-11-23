@@ -1,0 +1,8 @@
+# Downloaded datasets (re-download with src/00_download_data.py)
+data/
+
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
