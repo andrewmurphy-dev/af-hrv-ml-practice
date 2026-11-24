@@ -6,3 +6,6 @@ data/
 
 # Python cache files
 __pycache__/
+
+# Generated plots and results (re-create by running the scripts)
+outputs/
