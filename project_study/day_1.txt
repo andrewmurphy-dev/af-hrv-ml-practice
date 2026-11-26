@@ -1,0 +1,116 @@
+what is header and annotation??
+
+so this code 
+
+
+import wfdb
+
+#what is this ?
+#this is a python library for opening heart recodordings from physionet files 
+#these files are .hea, .atr, .qrs 
+#python alone cant read these files
+#wfdb is a tool that opens them 
+
+
+#so we have functions part fo this library 
+#to open this file 
+
+#to search libraries and there functions correlated to hat particular libary u can search 
+#https://pypi.org/project/wfdb/1.3.5/
+
+
+#annotation 
+
+#what is it ??
+
+#this just means a note added to something 
+
+#in the data 
+
+#it contains 3 columns and many rows 
+
+#the columns are:
+
+#sample --> where
+#symbol ---> what kind of note 
+#aux_note ---> extra detail 
+
+
+
+#so they extra detail is here
+
+
+
+## LTAFDB rhythm labels (aux_note)
+
+These appear in the aux_note column, always with symbol "+"
+("+" = rhythm changes here, aux_note = what it changes to).
+A label means: "from here on, the rhythm is this — until the next label."
+
+| aux_note | Rhythm                            | In plain words                                   |
+|----------|-----------------------------------|--------------------------------------------------|
+| (N       | Normal sinus rhythm               | Normal heartbeat                                 |
+| (AFIB    | Atrial fibrillation               | AF — the one we care about                       |
+| (SBR     | Sinus bradycardia                 | Normal rhythm, but slow                          |
+| (SVTA    | Supraventricular tachyarrhythmia  | Fast rhythm starting above the lower chambers    |
+| (B       | Ventricular bigeminy              | Every other beat is an early V beat              |
+| (T       | Ventricular trigeminy             | Every third beat is an early V beat              |
+| (IVR     | Idioventricular rhythm            | Lower chambers set a slow pace themselves        |
+| (VT      | Ventricular tachycardia           | Fast rhythm from the lower chambers (serious)    |
+
+### For this project
+- The code only asks: (AFIB or not?
+- Everything that isn't (AFIB = "non-AF"
+- (B and (T are full of early beats → spiky RR → probably what the lab's
+  "mildly abnormal" class catches
+
+
+
+
+
+
+#header 
+
+#this is one small set of facts about the recording 
+
+#doesnt really have columns just a text file with a few lines 
+
+
+#so in this project we really care about 
+
+fs --> measurements per second
+#sig_len ---> the total measurements in the recording 
+
+
+#so u can go sig_len / fs , to get the total length for about 24 hours
+
+
+
+
+
+#so in section 2 
+
+#we are tryibg to get the beat data and turn it into RR intervals 
+
+#rememeber 
+
+np.isin , this check each item , it gives a true or false for each 
+
+#so qfdb only gives u raw notes , it doesnt tell u AF epidodes or %AF 
+
+#so we need to cound it ourselves with a for loop 
+
+#save each start , end episode 
+
+
+#then we plot it 
+
+
+
+
+#so plot 1 , imagee shows a full strecth of hours 
+#it shows the af lasted for about 8 hours 
+
+
+
+#second plot shows a close up 
