@@ -1,0 +1,8 @@
+pretty much to understand the data 
+to label it 
+
+and plot it 
+
+to get the rr intervals 
+to measure the time of af happens cause we are only given raw data 
+
